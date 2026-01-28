@@ -130,39 +130,3 @@ console.log(
 
 // 12
 console.log(sentence.substr(sentence.indexOf("because"), 23));
-
-// Exercise 3
-
-// 1
-let loveSentence =
-  "Love is the best thing in this world. Some found their love and some are still looking for their love.";
-console.log(loveSentence.match(/love/gi).length);
-
-// 2
-console.log(sentence.match(/because/g).length);
-
-// 3
-const dirtySentence =
-  "%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. The@re $is no@th@ing;";
-let cleanText = dirtySentence.replace(/[^a-zA-Z\s]/g, "");
-let words = cleanText.toLowerCase().split(" ");
-
-let frequency = {};
-for (let word of words) {
-  frequency[word] = (frequency[word] || 0) + 1;
-}
-
-console.log(frequency);
-
-// most frequent word
-let mostFrequent = Object.entries(frequency).sort((a, b) => b[1] - a[1])[0];
-console.log(mostFrequent);
-
-// 4
-let incomeText =
-  "He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.";
-let numbers = incomeText.match(/\d+/g).map(Number);
-
-let totalAnnualIncome = numbers[0] * 12 + numbers[1] + numbers[2] * 12;
-
-console.log(totalAnnualIncome);
